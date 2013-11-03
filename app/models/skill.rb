@@ -1,6 +1,3 @@
-require_relative 'skill'
-require_relative 'user'
-
 class Skill < ActiveRecord::Base
   has_many :skillsets
   has_many :users, through: :skillsets
