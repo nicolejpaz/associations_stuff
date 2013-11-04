@@ -5,8 +5,8 @@ class Skill < ActiveRecord::Base
 
   def user_with_proficiency(rating)
     skill_id = self.id
-    skillset = Skillset.where(skill_id: skill_id, proficiency: rating)[0]
+    skillset = Skillset.where(skill_id: skill_id, proficiency: rating).first
     user_id = skillset.user_id
-    User.where(id: user_id)[0]
+    User.where(id: user_id).first
   end
 end

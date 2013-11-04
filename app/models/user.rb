@@ -13,4 +13,12 @@ class User < ActiveRecord::Base
   def set_proficiency_for(skill, rating)
     make_connection(skill).update_attributes(proficiency: rating)
   end
+
+  def over_9000(skill)
+    if proficiency_for(skill) >= 9000
+      "#{skill[:name]} is over 9000!!!!!!!!!!!!!!!!"
+    else
+      "Haha, your skill sucks!"
+    end
+  end
 end
